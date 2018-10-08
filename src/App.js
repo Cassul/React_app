@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import '@zendeskgarden/react-textfields/dist/styles.css';
+
+import { ThemeProvider } from '@zendeskgarden/react-theming';
+import { TextField, Label, Hint, Input, Message } from '@zendeskgarden/react-textfields';
 import './App.css';
+import $ from 'jquery'
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <ThemeProvider>
+          <TextField>
+            <Label>Login</Label>
+            <Hint>please enter your email</Hint>
+            <Input placeholder="email" />
+          </TextField>
+        </ThemeProvider>
+        <ThemeProvider>
+          <TextField>
+            <Label>Password</Label>
+            <Hint>please enter your password</Hint>
+            <Input placeholder="password" />
+          </TextField>
+        </ThemeProvider>
       </div>
     );
   }
